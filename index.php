@@ -1,3 +1,4 @@
+<?php require_once'config.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,8 +15,18 @@
 
 <div id="container">
     <h3>Teste de Jquery</h3>
-    <button id="bt1"  class="btn btn-flat">Botão 1</button>
-    <button id="bt2" class="btn btn-flat">Botão 2</button>
+    <div>
+        <button id="mostrar"   class="btn btn-flat">Mostrar</button>
+        <button id="esconder" class="btn btn-flat">Esconder</button>
+    </div>
+    <div id="texto" >
+            <?php 
+                $dados = listar('pessoa');
+                foreach($dados as $dado){
+                    echo $dado->email . '<br>';
+                }
+            ?>
+    </div>
 </div>
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
