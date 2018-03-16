@@ -114,7 +114,8 @@ $(document).ready(function(){
     });
 })
 ```
-```php
+
+```html
 <?php require_once'config.php'; ?>
 <!DOCTYPE html>
 <html>
@@ -159,21 +160,101 @@ $(document).ready(function(){
 
 ---
 
-## <a name="parte4"></a>
+## <a name="parte4">Aula 04 Evento Change</a>
+
+- js/change.js
+```javascript
+$(document).ready(function () {
+    /*
+        this
+        Change
+        val
+    */
+    $('#cor').on('change', function () {
+        var cor = $(this).val();
+        //$('body').css('background-color',cor);
+        //$('h2').css('background-color',cor);
+        $('h2').css({'background-color': cor, 'color': '#FFF'});
+    });
+    /* Função do thema materialize*/
+    $('select').material_select();
+});
+```
+- 
+```html
+      <div class="col s12">
+            <form>
+                <select class="selected select-dropdown" id="cor">
+                    <option value="" selected="selected">Escolha uma cor</option>
+                    <option value="yellow">Amarelo</option>
+                    <option value="blue">Azul</option>
+                    <option value="black">Preto</option>
+                </select>
+            </form>
+        </div>
+    </div>
+```
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte5"></a>
+## <a name="parte5">Aula 05 Evento Change Exemplo</a>
+
+- js/change.js
+```javascript
+$(document).ready(function () {
+    /* Função do thema materialize*/
+    $('select').material_select();
+
+    $('#texto').hide();
+    $('#status_texto').on('change',function () {
+        var status = $(this).val();
+      
+        console.log(typeof(status));
+        console.log(typeof('mostrar'));
+        var divs = $('div');
+        console.log(divs.length); //quantidade de divs
+        
+        if(status === 'mostrar'){
+            $('#texto').show();
+        }else{
+            $('#texto').hide();
+        }
+    })
+
+});
+```
+- change.php
+```html
+<div class="col s12">
+            <form>
+                <select class="selected select-dropdown" id="status_texto">
+                    <option value="" selected="selected">Escolha uma opção</option>
+                    <option value="mostrar">Mostrar Texto</option>
+                    <option value="esconder">Esconder Texto</option>
+                </select>
+            </form>
+        </div>
+        <div class="col s12" id="texto">
+            <?php
+                $pessoa = listar('pessoa');
+                foreach ($pessoa as $pes):
+                    echo $pes->email . "<br>";
+                endforeach;
+
+            ?>
+        </div>
+```
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte6"></a>
+## <a name="parte6">Aula 06 Evento Do Teclado Key</a>
+
 
 
 [Voltar ao Índice](#indice)
