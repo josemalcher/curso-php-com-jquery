@@ -356,7 +356,51 @@ $(document).ready(function () {
 
 ---
 
-## <a name="parte8"></a>
+## <a name="parte8">Aula 08 Encontrando Elemento Com O Find</a>
+
+- aula08-find.php
+```html
+
+<div class="row" id="container">
+    <div id="titulo">
+        <h2>Curso de jquery</h2>
+        <div id="subtitulo">
+            SubTitulo
+        </div>
+    </div>
+    <div>
+        <button id="mostrar" class="btn btn-flat">Mostrar Texto</button>
+        <button id="esconder" class="btn btn-flat">Esconder Texto</button>
+    </div>
+```
+
+- js/aula08-find.js
+```javascript
+$(document).ready(function () {
+
+var container = $("#container");
+var titulo = container.find("#titulo");
+var subtitulo = titulo.find("#subtitulo");
+var mostrar_txt = container.find("#mostrar_txt");
+
+var container_form = container.find('#container_form');
+var bt_sumit = container_form.find('#submit');
+
+subtitulo.html('encontrou o subtitulo');
+mostrar_txt.html(subtitulo.html());
+
+var texto = container.find('#texto');
+//console.log(texto.text());
+texto.css({'color':'#988', 'font-weight': 'bold'});
+
+
+bt_sumit.on('click',function(event) {
+    event.preventDefault();
+    texto.css({'color':'#F09', 'font-weight': 'bold'});
+});
+
+});
+```
 
 
 [Voltar ao Índice](#indice)
