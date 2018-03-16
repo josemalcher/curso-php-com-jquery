@@ -28,6 +28,6 @@ $(document).ready(function () {
         }else{
             $('#texto').hide();
         }
-    })
+    });
 
 });
