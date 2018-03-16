@@ -323,7 +323,33 @@ $(document).ready(function () {
 
 ---
 
-## <a name="parte7"></a>
+## <a name="parte7">Aula 07 Prevenindo Comportamentos Por Default(padrão)</a>
+
+- aula07-compdefault.php
+```html
+ <input name="busca" type="text" id="txt" value="Faça sua busca">
+
+ <select name="status" class="selected select-dropdown" id="status_texto" >
+```
+
+- js/aula07-compdefault.js
+```javascript
+$(document).ready(function () {
+    /* - event.preventDefault
+    *    prevenindo comportamento padrão
+    *
+    *   - serialize
+    *   Pega dados do input
+    *   obrigatorio botar os 'name'
+    */
+    var form = $("#form");
+    form.on('submit', function (event) {
+        event.preventDefault();
+        //console.log('Clicou no botão submit do form');
+        console.log(form.serialize());
+    });
+});
+```
 
 
 [Voltar ao Índice](#indice)
