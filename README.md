@@ -12,8 +12,8 @@
 - [Aula 06 Evento Do Teclado Key](#parte6)   
 - [Aula 07 Prevenindo Comportamentos Por Default(padrão)](#parte7)   
 - [Aula 08 Encontrando Elemento Com O Find](#parte8)   
-- [Aula 09 Criando Fun‡äes Personalizadas](#parte9)   
-- [Aula 10 Criando Anima‡äes B sicas Com Animate](#parte10)   
+- [Aula 09 Criando Funções Personalizadas](#parte9)   
+- [Aula 10 Criando AnimaÇões Básicas Com Animate](#parte10)   
 - [Aula 11 Mostrando E Escondendo Elementos Com Toggles](#parte11)   
 - [Aula 12 Conhecendo O Append](#parte12)   
 - [Aula 13 Como Trabalhar Com Os Atributos De Uma Tag](#parte13)   
@@ -454,7 +454,112 @@ $(document).ready(function () {
 
 ---
 
-## <a name="parte10"></a>
+## <a name="parte10">Aula 10 Criando Animações Básicas Com Animate</a>
+
+- http://api.jquery.com/animate/
+
+- Aula-10-Criando-Animacoes-Basicas-Com-Animate
+
+```js
+$(document).ready(function () {
+
+    /* Aula 10 Criando Animações Básicas Com Animate */
+
+    var container = $("#container");
+    var titulo = container.find('#titulo');
+    var subtitulo = titulo.find('#subtitulo');
+    var mostrar_texto = container.find('#mostrar_texto');
+    //var texto = container.find('#texto');
+    var mostra_texto = container.find('#mostra_texto');
+    var bt_submit = container.find('#bt_submit');
+
+    bt_submit.on('click', function (event) {
+        event.preventDefault();
+
+        mostra_texto.animate({
+            padding: '50'
+        }, 5000, function () {
+            subtitulo.html('Terminou as animações');
+            subtitulo.css('background-color','#ff0');
+        });
+        mostra_texto.fadeOut(1000);
+        mostra_texto.fadeIn(3000);
+    });
+
+
+});
+```
+
+```html
+<?php require_once '../config.php' ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../materialize/v0.100.2/css/materialize.min.css"
+          media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+<div id="container">
+    <h2>Curso de jquery com php</h2>
+    <button class="btn" id="mostrar">Mostrar texto</button>
+    <button class="btn" id="esconder">Esconder texto</button>
+
+    <form class="" id="form">
+        <input type="text" id="txt" name="busca" value="Faça sua busca"/>
+        <select id="status_texto" name="status">
+            <option value="" selected="selected">Escolha uma opção</option>
+            <option value="mostrar">Mostrar texto</option>
+            <option value="esconder">Esconder texto</option>
+        </select>
+        <input type="submit" id="bt_submit"/>
+    </form>
+
+    <div id="titulo">
+        <div id="subtitulo">
+            subtitulo
+        </div>
+    </div>
+
+    <div id="texto">
+        <div id="mostra_texto">
+            <?php
+            $pessoa = listar('pessoa');
+            foreach ($pessoa as $p):
+                echo $p->email . "<br />";
+            endforeach;
+            ?>
+        </div>
+    </div>
+
+    <div id="texto_digitado">
+        <div id="texto_digitado2">
+            texto digitado 2
+        </div>
+    </div>
+
+    <div id="mostrar_texto">
+        mostrar
+    </div>
+
+</div>
+
+<script type="text/javascript" src="../jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../jquery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../materialize/v0.100.2/js/materialize.min.js"></script>
+
+<script type="text/javascript" src="aula10.js"></script>
+
+</body>
+</html>
+```
+
 
 
 [Voltar ao Índice](#indice)
@@ -469,6 +574,54 @@ $(document).ready(function () {
 ---
 
 ## <a name="parte12"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte13"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte14"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte15"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte16"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte17"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte18"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte19"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte20"></a>
 
 
 [Voltar ao Índice](#indice)
