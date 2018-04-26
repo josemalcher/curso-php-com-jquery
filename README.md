@@ -681,7 +681,71 @@ $(document).ready(function () {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte13"></a>
+## <a name="parte13">Aula 13 Como Trabalhar Com Os Atributos De Uma Tag</a>
+
+```js
+$(document).ready(function () {
+
+    /* Aula 13 Como Trabalhar Com Os Atributos De Uma Tag */
+
+    var container = $("#container");
+    var tabela = container.find('#tabela');
+    var tbody = tabela.find("tbody");
+    var btn_atributos = tbody.find("#btn_atributos");
+    var btn_id = tbody.find(".btn_id");
+
+    btn_id.on('click',function () {
+        var id = $(this).attr('data-id');
+        console.log(id);
+    })
+
+});
+```
+-
+```html
+<div id="container">
+    <table id="tabela" class="table-of-contents t">
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Ação</th>
+        </tr>
+        </thead>
+        <tbody>
+            <?php
+            $pessoas = listar('pessoa');
+            $pessoa = new ArrayIterator($pessoas);
+            while($pessoa->valid()):
+            ?>
+                <tr>
+                    <td><?= $pessoa->current()->nome; ?></td>
+                    <td><?= $pessoa->current()->email; ?></td>
+                    <td><button class="btn btn_id" id="btn_atributos" data-id="<?= $pessoa->current()->id;?>">ID</button></td>
+                </tr>
+            <?php
+                $pessoa->next();
+                endwhile;
+            ?>
+            <!--<tr>
+                <td>Luciana</td>
+                <td>contato@lucianabarbosa.net</td>
+                <td><button class="btn btn_id" id="btn_atributos" data-id="31">Ver id</button></td>
+            </tr><tr>
+                <td>Anônimo</td>
+                <td>contato@anonimo.net</td>
+                <td><button class="btn btn_id" id="btn_atributos" data-id="91">Ver id</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><button class="btn btn_id" id="btn_atributos" data-id="10">Atributos</button></td>
+            </tr>-->
+        </tbody>
+    </table>
+</div>
+
+```
 
 
 [Voltar ao Índice](#indice)
