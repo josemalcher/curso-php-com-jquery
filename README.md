@@ -820,6 +820,64 @@ $(document).ready(function () {
 ---
 ## <a name="parte15">Aula 15 Verificando Se Elemento Esta Selecionado</a>
 
+```js
+$(document).ready(function () {
+
+    /* Aula 15 Verificando Se Elemento Esta Selecionado */
+    // target
+    // is
+    // checked
+
+    var container = $("#container");
+    var lista = container.find('#lista');
+    var check = container.find('.check');
+
+    lista.on('click', function (event) {
+        var alvo = $(event.target);
+        if (alvo.is('li')) {
+            alvo.css('background-color', '#900');
+        } else {
+            console.log('não é um li');
+        }
+    });
+
+    check.on('click', function () {
+        /*console.log('você digitou em ' + $(this).val());
+        if ($(this).val() == 'maria' && $(this).is(':checked')) {
+            alert('marcou maria');
+        }*/
+        if ($(this).is(':checked')) {
+            console.log($(this).val() + ' Está Selecionado');
+        }else{
+            console.log($(this).val() + '  Não Está Selecionado');
+        }
+    })
+});
+```
+
+```html
+<div id="container">
+    <!-- Lista de nome com select para usar no método is -->
+    <ul id="lista" class="collection">
+        <li class="collection-item">José Malcher</li>
+        <li class="collection-item">Luciana B</li>
+        <li class="collection-item">Caio</li>
+        <li class="collection-item">Fernando</li>
+    </ul>
+    <p>
+        <input type="checkbox" id="jose" class="check" value="jose">
+        <label for="jose"><span>José</span></label>
+    </p>
+    <p>
+        <input type="checkbox" id="luciana" class="check" value="Luciana">
+        <label for="luciana"><span>Luciana</span></label>
+    </p>
+    <p>
+        <input type="checkbox" id="maria" class="check" value="maria">
+        <label for="maria"><span>Maria</span></label>
+    </p>
+```
+
 
 [Voltar ao Índice](#indice)
 

@@ -14,6 +14,28 @@
 
 <body>
 <div id="container">
+    <!-- Lista de nome com select para usar no método is -->
+    <ul id="lista" class="collection">
+        <li class="collection-item">José Malcher</li>
+        <li class="collection-item">Luciana B</li>
+        <li class="collection-item">Caio</li>
+        <li class="collection-item">Fernando</li>
+    </ul>
+
+    <p>
+        <input type="checkbox" id="jose" class="check" value="jose">
+        <label for="jose"><span>José</span></label>
+    </p>
+    <p>
+        <input type="checkbox" id="luciana" class="check" value="Luciana">
+        <label for="luciana"><span>Luciana</span></label>
+    </p>
+    <p>
+        <input type="checkbox" id="maria" class="check" value="maria">
+        <label for="maria"><span>Maria</span></label>
+    </p>
+
+
     <table id="tabela" class="table-of-contents t">
         <thead>
         <tr>
@@ -29,8 +51,8 @@
         while ($pessoa->valid()):
             ?>
             <tr>
-                <td><input type="text" class="input-field nome" value="<?= $pessoa->current()->nome; ?>" /></td>
-                <td><input type="email" class="input-field email" value="<?= $pessoa->current()->email; ?>" /></td>
+                <td><input type="text" class="input-field nome" value="<?= $pessoa->current()->nome; ?>"/></td>
+                <td><input type="email" class="input-field email" value="<?= $pessoa->current()->email; ?>"/></td>
                 <td>
                     <button class="btn btn_id" id="btn_atributos" data-id="<?= $pessoa->current()->id; ?>">ID</button>
                 </td>
