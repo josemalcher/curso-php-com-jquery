@@ -751,7 +751,68 @@ $(document).ready(function () {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte14"></a>
+## <a name="parte14">Aula 14 Pegando Proprio Elemento Com CurrentTarget</a>
+
+```js
+$(document).ready(function () {
+
+    /* Aula 14 Pegando Proprio Elemento Com CurrentTarget */
+
+    var container = $("#container");
+    var tabela = container.find('#tabela');
+    var tbody = tabela.find("tbody");
+
+    /*
+    * val() - pega os valores dos input
+    * event.currentTarguet() - pega o proprio objeto
+    * closest() - pega o elemento mais proximo do objeto
+    * */
+
+    //console.log($(".email").val()); // pega somente o primeiro
+    tbody.on('click', '.btn_id', function (event) {
+        event.preventDefault();
+        console.log( $(event.currentTarget).closest('tr').find('.nome').val());
+        console.log( $(event.currentTarget).closest('tr').find('.email').val());
+
+    });
+
+
+
+
+});
+```
+-
+```html
+<div id="container">
+    <table id="tabela" class="table-of-contents t">
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Ação</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        $pessoas = listar('pessoa');
+        $pessoa = new ArrayIterator($pessoas);
+        while ($pessoa->valid()):
+            ?>
+            <tr>
+                <td><input type="text" class="input-field nome" value="<?= $pessoa->current()->nome; ?>" /></td>
+                <td><input type="email" class="input-field email" value="<?= $pessoa->current()->email; ?>" /></td>
+                <td>
+                    <button class="btn btn_id" id="btn_atributos" data-id="<?= $pessoa->current()->id; ?>">ID</button>
+                </td>
+            </tr>
+            <?php
+            $pessoa->next();
+        endwhile;
+        ?>
+        </tbody>
+    </table>
+</div>
+```
 
 
 [Voltar ao Índice](#indice)
