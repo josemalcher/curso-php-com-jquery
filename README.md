@@ -818,13 +818,13 @@ $(document).ready(function () {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte15"></a>
+## <a name="parte15">Aula 15 Verificando Se Elemento Esta Selecionado</a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte16"></a>
+## <a name="parte16">Aula 16 Pegando Dados De Um Form Com Serializae</a>
 
 
 [Voltar ao Índice](#indice)

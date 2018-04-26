@@ -14,6 +14,7 @@ $(document).ready(function () {
         event.preventDefault();
         //console.log('Clicou no botão submit do form');
         console.log(form.serialize());
+        $(this).find()
     });
 
 
