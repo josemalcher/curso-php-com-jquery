@@ -936,7 +936,109 @@ $(document).ready(function () {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte17"></a>
+## <a name="parte17">Aula 17 Enviando E Recebendo Dados Com $.post E $.get</a>
+
+```js
+$(document).ready(function () {
+
+    var container = $("#container");
+    var form_cadastro = container.find('#form_cadastro');
+    var bt_cadastrar = form_cadastro.find('#bt_cadastrar');
+    var mensagem = container.find('#mensagem');
+
+    // POST
+    // GET
+
+    bt_cadastrar.on('click', function (event) {
+        event.preventDefault();
+        var nome = form_cadastro.find('#nome').val();
+        var email = form_cadastro.find('#email').val();
+        var telefone = form_cadastro.find('#telefone').val();
+
+        //console.log(nome.length); // retorna quantidade de caracteres
+        if (nome.length === 0) {
+            mensagem.html("Nome é Obrigatorio");
+        }else if (email.length === 0) {
+            mensagem.html("Email é Obrigatorio");
+        }else if (telefone.length === 0) {
+            mensagem.html("Telefone é Obrigatorio");
+        }else{
+            /*
+            $.post('submit.php', form_cadastro.serialize(), function (data) {
+                mensagem.html(data);
+            }).done(function () {
+                mensagem.html("CADASTRADO COM SUCESSO");
+            }).fail(function () {
+                mensagem.html("Ocorreu um erro ao cadastrar");
+            });*/
+            //form_cadastro.submit();
+            // POST
+            /*$.post('submit.php', form_cadastro.serialize(), function (data) {
+                mensagem.html(data);
+            });*/
+            // GET
+            /*$.get('submit.php', form_cadastro.serialize(), function (data) {
+                mensagem.html(data);
+            });*/
+            // passar os dados separados
+            $.get('submit.php', {'nome': nome, 'email':email, 'telefone':telefone}, function (data) {
+                mensagem.html(data);
+            });
+        }
+    });
+});
+```
+
+```html
+<div class="container" id="container">
+    <form action="submit.php" method="get" id="form_cadastro">
+        <label>Nome:</label>
+        <input type="text" name="nome" id="nome" class="input-field">
+        <label>Email</label>
+        <input type="text" name="email" id="email" class="input-field">
+        <label>Telefone</label>
+        <input type="text" name="telefone" id="telefone" class="input-field">
+
+        <button type="submit" id="bt_cadastrar" class="btn bt">Cadastrar</button>
+    </form>
+    <div class="card-panel red-text" id="mensagem"></div>
+</div>
+```
+- config.php
+```php
+/* Aula 17 Enviando E Recebendo Dados Com $.post E $.get */
+function cadastrar_pessoa($nome, $email, $telefone){
+    $pdo = conectar();
+    $cadastrar = $pdo->prepare("insert into pessoa(nome,email,telefone)value (?,?,?)");
+    $cadastrar->bindValue(1, $nome);
+    $cadastrar->bindValue(2, $email);
+    $cadastrar->bindValue(3, $telefone);
+    $cadastrar->execute();
+
+    return ($cadastrar->rowCount() == 1) ? true : false;
+}
+```
+- Aula-17-Enviando-E-Recebendo-Dados-Com-post-E-get/submit.php
+```php
+<?php
+require '../config.php';
+
+/*$nome = $_POST['nome'];
+$email = $_POST['email'];
+$telefone = $_POST['telefone'];*/
+$nome = $_GET['nome'];
+$email = $_GET['email'];
+$telefone = $_GET['telefone'];
+
+//cadastrar_pessoa($nome, $email, $telefone);
+if(cadastrar_pessoa($nome, $email, $telefone)){
+    echo "Cadastrado com sucesso";
+}else{
+    echo "ERRO ao cadastrar";
+}
+
+
+```
 
 
 [Voltar ao Índice](#indice)
