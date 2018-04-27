@@ -1,34 +1,26 @@
 $(document).ready(function () {
 
-    /* Aula 15 Verificando Se Elemento Esta Selecionado */
-    // target
-    // is
-    // checked
+    /* Aula 14 Pegando Proprio Elemento Com CurrentTarget */
 
     var container = $("#container");
-    var lista = container.find('#lista');
-    var check = container.find('.check');
+    var tabela = container.find('#tabela');
+    var tbody = tabela.find("tbody");
 
-    lista.on('click', function (event) {
-        var alvo = $(event.target);
-        if (alvo.is('li')) {
-            alvo.css('background-color', '#900');
-        } else {
-            console.log('não é um li');
-        }
+    /*
+    * val() - pega os valores dos input
+    * event.currentTarguet() - pega o proprio objeto
+    * closest() - pega o elemento mais proximo do objeto
+    * */
+
+    //console.log($(".email").val()); // pega somente o primeiro
+    tbody.on('click', '.btn_id', function (event) {
+        event.preventDefault();
+        console.log( $(event.currentTarget).closest('tr').find('.nome').val());
+        console.log( $(event.currentTarget).closest('tr').find('.email').val());
+
     });
 
-    check.on('click', function () {
-        /*console.log('você digitou em ' + $(this).val());
-        if ($(this).val() == 'maria' && $(this).is(':checked')) {
-            alert('marcou maria');
-        }*/
-        if ($(this).is(':checked')) {
-            console.log($(this).val() + ' Está Selecionado');
-        }else{
-            console.log($(this).val() + '  Não Está Selecionado');
-        }
-    })
+
 
 
 });
