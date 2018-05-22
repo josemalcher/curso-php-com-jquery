@@ -1,7 +1,7 @@
 <?php
 require '../config.php';
 
-sleep(3);
+sleep(5);
 //print_r($_POST);
 $nome = $_POST['nome'];
 $email = $_POST['email'];

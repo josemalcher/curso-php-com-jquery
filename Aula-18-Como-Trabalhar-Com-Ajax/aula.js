@@ -26,7 +26,7 @@ $(document).ready(function () {
                    url: 'submit.php',
                    type: 'post', //get
                    //data: form_cadastro.serialize(),
-                   data: 'nome='+nome+'&email='+email,
+                   data: 'nome='+nome+'&email='+email+'&telefone='+telefone,
                    beforeSend: function () {
                        mensagem.html('CADASTRANDO PESSOA, aguarde...')
                    },

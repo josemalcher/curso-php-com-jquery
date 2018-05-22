@@ -1191,7 +1191,188 @@ echo json_encode($pessoa);
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte20"></a>
+## <a name="parte20">Aula 20 Inicio Do Projeto Do Curso</a>
+
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte21"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte22"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte23"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte24"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte25"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte26"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte27"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte28"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte29"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte30"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte31"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte32"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte33"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte34"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte35"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte36"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte37"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte38"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte39"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte40"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte41"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte42"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte43"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte44"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte45"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte46"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte47"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte48"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte49"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte50"></a>
 
 
 [Voltar ao Índice](#indice)
