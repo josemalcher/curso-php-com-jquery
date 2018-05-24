@@ -9,9 +9,9 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="row">
-        <form class="form-horizontal">
+<div class="container" id="container">
+    <div class="row" id="login">
+        <form class="form-horizontal" id="form_login">
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-10">
@@ -26,14 +26,15 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Login</button>
+                    <button type="submit" class="btn btn-default" id="btn_login">Login</button>
+                    <div class="mensagem" id="mensagem"></div>
                 </div>
             </div>
         </form>
     </div>
 </div>
 <!--Import jQuery before materialize.js-->
-<script type="text/javascript" src="public/jquery/jquery-1.14.14.mask.js"></script>
+<!--<script type="text/javascript" src="public/jquery/jquery-1.14.14.mask.js"></script>-->
 <script type="text/javascript" src="public/jquery/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="public/jquery/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="public/js/bootstrap.min.js"></script>
