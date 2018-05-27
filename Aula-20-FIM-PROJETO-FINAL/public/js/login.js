@@ -19,6 +19,11 @@ $(document).ready(function () {
                 },
             success: function (data) {
                 console.log(data);
+                if(data === "1"){
+                    mensagem.html('Logado com sucesso');
+                }else{
+                    mensagem.html('ERRO AO LOGAR!');
+                }
             }
         });
     });

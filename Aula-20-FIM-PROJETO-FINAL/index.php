@@ -24,6 +24,16 @@
                 </div>
             </div>
             <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Você é: </label>
+                <div class="col-md-10">
+                    <select class="form-control" id="tipo" name="tipo">
+                        <option value="0" style="display: none">[Selecione]</option>
+                        <option value="professor">Professor</option>
+                        <option value="aluno">Aluno</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default" id="btn_login">Login</button>
                     <div class="mensagem" id="mensagem"></div>
