@@ -14,6 +14,9 @@
     <!-- Custom Fonts -->
     <link href="<?php echo base_url('assets/backend/css/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet" type="text/css">
 
+    <!-- jQuery -->
+    <script src="<?php echo base_url('assets/backend/js/jquery.min.js') ?>"></script>
+
 </head>
 
 <body>

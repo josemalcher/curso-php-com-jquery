@@ -18,4 +18,10 @@ class loginController extends CI_Controller
         $this->load->view('login/loginViews');
         $this->load->view('layout/footerViews');
     }
+
+
+    public function login(){
+        echo "logado...";
+    }
+
 }
