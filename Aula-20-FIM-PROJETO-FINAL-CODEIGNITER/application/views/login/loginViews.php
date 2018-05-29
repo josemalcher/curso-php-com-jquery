@@ -47,8 +47,17 @@
         var email = form_login.find('#email');
         var senha = form_login.find('#senha');
         var btn_login = form_login.find('#btn_login');
-        var mensagem = form_login.find('#mensagem');
         var carregando = form_login.find('#carregando');
+        var mensagem = form_login.find('#mensagem');
+        var mensagem_erro = function (mensagem, tipo) {
+            var error = '';
+            error += '<div class="alert alert-' + tipo + '">';
+            error += '<button type="button" class="close" data-dismiss="alert">&times</button>';
+            error += '<h4>Aviso!</h4>';
+            error += mensagem;
+            error += '</div>';
+            return error;
+        };
 
         btn_login.on('click', function (event) {
             event.preventDefault();
@@ -62,20 +71,28 @@
                 },
                 success: function (data) {
                     if (data.length > 0 && data !== 'email') {
-                        mensagem.html('Logado com sucesso!');
+
+                        var mensagem_sucesso = '';
+                        mensagem_sucesso += '<div class="alert alert-success">';
+                        mensagem_sucesso += '<h4>Bem Vindo!</h4>';
+                        mensagem_sucesso += 'Você será redirecionado para página!<br>Aguarde... ';
+                        mensagem_sucesso += '<img src="<?=base_url()?>assets/img/ajax-loader.gif" alt="Carregando...">';
+                        mensagem_sucesso += '</div>';
+                        mensagem.html(mensagem_sucesso);
+                        //mensagem.html(mensagem_erro('Logado Com Sucesso! <br> Você será redirecionado ao Painel', 'success'));
                         var urlRedirect = "<?=base_url()?>" + data;
                         carregando.remove();
-                        setTimeout("window.location.href = '" + urlRedirect + "'", 2000);
+                        setTimeout("window.location.href = '" + urlRedirect + "'", 5000);
 
                     } else {
                         if (data === 'email') {
-                            mensagem.html('E-Mail Incorreto');
-                            var urlRedirect = "<?=base_url()?>" + "alunoController/index";
-                            setTimeout("window.location.href = '" + urlRedirect + "'", 1000);
+                            mensagem.html(mensagem_erro('E-mail Inválido', 'danger'));
+                            var urlRedirect = "<?=base_url()?>" + "loginController/index";
+                            setTimeout("window.location.href = '" + urlRedirect + "'", 1500);
                         } else {
-                            mensagem.html('ERRO ao logar!');
-                            var urlRedirect = "<?=base_url()?>" + "alunoController/index";
-                            setTimeout("window.location.href = '" + urlRedirect + "'", 1000);
+                            mensagem.html(mensagem_erro('Erro ao Logar', 'danger'));
+                            var urlRedirect = "<?=base_url()?>" + "loginController/index";
+                            setTimeout("window.location.href = '" + urlRedirect + "'", 1500);
                         }
                     }
 
