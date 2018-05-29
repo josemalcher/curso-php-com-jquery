@@ -11,6 +11,10 @@ class alunoController extends CI_Controller
 
     public function index()
     {
+        $dadosHeader['titulo_login'] = 'PAGINA DO ALUNO';
 
+        $this->load->view('layout/headerViews', $dadosHeader);
+        $this->load->view('login/loginViews');
+        $this->load->view('layout/footerViews');
     }
 }
