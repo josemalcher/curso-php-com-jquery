@@ -7,6 +7,7 @@ class loginController extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        $this->logout(); // limpar dados de sessão
     }
 
     public function index()
@@ -18,6 +19,7 @@ class loginController extends CI_Controller
         $this->load->view('layout/headerViews', $dadosHeader);
         $this->load->view('login/loginViews');
         $this->load->view('layout/footerViews');
+        $this->output->enable_profiler(true); //  <<<<<------  DEBUG  ****----
     }
 
 
@@ -40,6 +42,7 @@ class loginController extends CI_Controller
                     $logado = $this->alunoModel->loginAluno($email, $senha);
                     if ($logado) {
                         $dadosSessao['tipo'] = 'aluno';
+                        $dadosSessao['id'] = $logado[0]->id;
                         $dadosSessao['nome'] = $logado[0]->aluno_nome;
                         $dadosSessao['email'] = $logado[0]->aluno_email;
                         $this->session->set_userdata($dadosSessao);
@@ -55,6 +58,7 @@ class loginController extends CI_Controller
                     $logado = $this->professorModel->loginProfessor($email, $senha);
                     if ($logado) {
                         $dadosSessao['tipo'] = 'professor';
+                        $dadosSessao['id'] = $logado[0]->id;
                         $dadosSessao['nome'] = $logado[0]->professor_nome;
                         $dadosSessao['email'] = $logado[0]->professor_email;
                         $this->session->set_userdata($dadosSessao);
@@ -70,6 +74,7 @@ class loginController extends CI_Controller
             }
         }
 
+
     }/* fim Login */
 
 
@@ -78,8 +83,10 @@ class loginController extends CI_Controller
     {
         //destroi os dados da sessão
         $this->session->unset_userdata('tipo');
+        $this->session->unset_userdata('id');
         $this->session->unset_userdata('nome');
         $this->session->unset_userdata('email');
+
         //set_msg('<p>VOCE SAIU DO SISTEMA</p>');
         //redirect('setup/login','refresh');
     }
